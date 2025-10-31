@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="it" data-theme="light">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Treemap</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- D3.js -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+
+    <!-- Foglio di stile -->
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <!-- =========================================================
+         TOGGLE TEMA
+         ========================================================= -->
+    <button id="theme-toggle" aria-label="Cambia tema">🌙</button>
+
+    <!-- =========================================================
+         CARD PRINCIPALE
+         ========================================================= -->
+    <main id="app">
+        <section id="container" aria-label="Visualizzazione a treemap dei dati">
+            <header class="header-block">
+                <h1 id="title">Video Game Sales Treemap</h1>
+                <p id="description">
+                    Vendite globali (in milioni) per piattaforma / publisher.
+                </p>
+
+                <!-- =====================================================
+               SWITCH DATASET
+               ===================================================== -->
+                <div id="dataset-switch" aria-label="Seleziona dataset">
+                    <button class="ds-btn active" data-dataset="games" type="button">
+                        🎮 Video Game Sales
+                    </button>
+                    <button class="ds-btn" data-dataset="movies" type="button">
+                        🎬 Movies Data Set
+                    </button>
+                    <button class="ds-btn" data-dataset="kickstarter" type="button">
+                        🚀 Kickstarter Data Set
+                    </button>
+                </div>
+            </header>
+
+            <!-- Contenitore responsive del grafico -->
+            <div id="viz-wrapper">
+                <div id="chart" role="img" aria-label="Treemap dati"></div>
+
+                <!-- Tooltip richiesto dai test -->
+                <div id="tooltip" class="hidden" data-value=""></div>
+            </div>
+
+            <!-- Legenda richiesta dai test -->
+            <footer id="legend" aria-label="Legenda categorie"></footer>
+        </section>
+    </main>
+
+    <!-- Script principale -->
+    <script src="script.js"></script>
+</body>
+
+</html>
